@@ -1,4 +1,9 @@
-import { years, type Blast, type Year } from "@/data/blasts"
+import { years, type Year } from "@/data/blasts"
+import type {
+  CaptionBuilder,
+  CaptionSource,
+  GeneratedCaption,
+} from "@/lib/domain/caption"
 
 const YEAR_LABELS: Record<Year, string> = {
   "1": "1st",
@@ -7,37 +12,38 @@ const YEAR_LABELS: Record<Year, string> = {
   "4": "4th",
 }
 
-export type GeneratedCaption = {
-  header: string
-  body: string
-  hashtags: string
-  text: string
-}
-
 export function buildCaption(
-  blast: Blast,
+  source: CaptionSource,
   name: string,
   year: Year,
   programAbbr: string
 ): GeneratedCaption {
-  const program = blast.programs.find((p) => p.abbr === programAbbr) ?? blast.programs[0]
+  const program = source.programs.find((p) => p.abbr === programAbbr) ?? source.programs[0]
   const displayName = name.trim() || "[Full Name]"
 
-  const body = blast.body
+  const yearly = source.yearly?.[year]
+  const title = yearly?.header ?? source.title
+
+  const body = (yearly?.body ?? source.body)
     .replaceAll("{name}", displayName)
+    .replaceAll("[Full Name]", displayName)
     .replaceAll("{year}", `${YEAR_LABELS[year]} Year`)
-    .replaceAll("{department}", blast.department)
+    .replaceAll("{department}", source.department)
     .replaceAll("{program}", program.name)
 
-  const hashtags = [...blast.hashtags, `#${program.abbr}`]
-  const text = `${blast.title}\n\n${body}\n\n${hashtags.join(" ")}`
+  const hashtags = yearly?.hashtags ?? [...source.hashtags, `#${program.abbr}`]
+  const text = `${title}\n\n${body}\n\n${hashtags.join(" ")}`
 
   return {
-    header: blast.title,
+    header: title,
     body,
     hashtags: hashtags.join(" "),
     text,
   }
+}
+
+export const defaultCaptionBuilder: CaptionBuilder = {
+  build: buildCaption,
 }
 
 export const yearLabel = (year: Year) => years.find((y) => y.value === year)?.label ?? year

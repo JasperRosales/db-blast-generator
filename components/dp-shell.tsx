@@ -21,7 +21,7 @@ export function DpShell() {
   return (
     <div className="relative isolate min-h-svh overflow-x-clip">
       <FloatingParticles colors={active.gradient} glow={active.glow} />
-      <SiteHeader blast={active} />
+      <SiteHeader />
       <main>
         <DpApp activeId={activeId} onActiveChange={setActiveId} />
       </main>

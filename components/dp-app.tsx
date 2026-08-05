@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 import { RiSparkling2Line } from "@remixicon/react"
 
 const DpGenerator = dynamic(
-  () => import("@/components/dp-generator").then((mod) => mod.DpGenerator),
+  () => import("@/components/dp/generator").then((mod) => mod.DpGenerator),
   {
     loading: () => (
       <div className="mx-auto grid max-w-5xl animate-pulse gap-4 px-4 pb-16 sm:px-6 lg:grid-cols-2">
