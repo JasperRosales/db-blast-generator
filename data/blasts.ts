@@ -20,15 +20,67 @@ export const cicsPrograms: Program[] = [
 ]
 
 export const cetPrograms: Program[] = [
-  { name: "BS in Civil Engineering", abbr: "BSCE" },
-  { name: "BS in Mechanical Engineering", abbr: "BSME" },
-  { name: "BS in Electrical Engineering", abbr: "BSEE" },
-  { name: "BS in Electronics Engineering", abbr: "BSECE" },
-  { name: "BS in Computer Engineering", abbr: "BSCpE" },
-  { name: "BS in Industrial Engineering", abbr: "BSIE" },
-  { name: "BS in Chemical Engineering", abbr: "BSChE" },
-  { name: "BS in Sanitary Engineering", abbr: "BSSE" },
+  { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
+  {
+    name: "Bachelor of Instrumentation and Control Engineering Technology",
+    abbr: "BIECT",
+  },
+  { name: "Bachelor of Mechanical Engineering Technology", abbr: "BMET" },
+  { name: "Bachelor of Architectural Engineering Technology", abbr: "BArET" },
+  { name: "Bachelor of Construction Engineering Technology", abbr: "BCnET" },
+  { name: "Bachelor of Civil Engineering Technology", abbr: "BCVET" },
+  { name: "Bachelor of Electrical Engineering Technology", abbr: "BEET" },
+  { name: "Bachelor of Computer Engineering Technology", abbr: "BCPET" },
+  { name: "Bachelor of Drafting Engineering Technology", abbr: "BDET" },
+  { name: "Bachelor of Electronics Engineering Technology", abbr: "BECET" },
 ]
+
+export const cetProgramsByYear: Readonly<Record<Year, readonly Program[]>> = {
+  "1": [
+    { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
+    {
+      name: "Bachelor of Instrumentation and Control Engineering Technology",
+      abbr: "BIECT",
+    },
+    { name: "Bachelor of Mechanical Engineering Technology", abbr: "BMET" },
+    {
+      name: "Bachelor of Architectural Engineering Technology",
+      abbr: "BArET",
+    },
+    {
+      name: "Bachelor of Construction Engineering Technology",
+      abbr: "BCnET",
+    },
+  ],
+  "2": [
+    { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
+    { name: "Bachelor of Mechanical Engineering Technology", abbr: "BMET" },
+    { name: "Bachelor of Civil Engineering Technology", abbr: "BCVET" },
+    { name: "Bachelor of Electrical Engineering Technology", abbr: "BEET" },
+    { name: "Bachelor of Computer Engineering Technology", abbr: "BCPET" },
+  ],
+  "3": [
+    { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
+    {
+      name: "Bachelor of Instrumentation and Control Engineering Technology",
+      abbr: "BIECT",
+    },
+    { name: "Bachelor of Mechanical Engineering Technology", abbr: "BMET" },
+    { name: "Bachelor of Drafting Engineering Technology", abbr: "BDET" },
+    { name: "Bachelor of Computer Engineering Technology", abbr: "BCPET" },
+    { name: "Bachelor of Electrical Engineering Technology", abbr: "BEET" },
+    { name: "Bachelor of Electronics Engineering Technology", abbr: "BECET" },
+  ],
+  "4": [
+    { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
+    {
+      name: "Bachelor of Instrumentation and Control Engineering Technology",
+      abbr: "BIECT",
+    },
+    { name: "Bachelor of Computer Engineering Technology", abbr: "BCPET" },
+    { name: "Bachelor of Electrical Engineering Technology", abbr: "BEET" },
+  ],
+}
 
 export const blasts: Blast[] = [
   {
@@ -140,6 +192,7 @@ export const blasts: Blast[] = [
     frames: ["hex", "seal"],
     department: "College of Engineering and Technology",
     programs: cetPrograms,
+    programsByYear: cetProgramsByYear,
     body: "Hello, I am {name}, a {year} {program} student at the {department}. Forged by late-night problem sets and fueled by ambition, I'm ready to build, design, and make this year count. Let's go!",
     hashtags: [
       "#CET",

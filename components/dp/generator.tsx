@@ -30,9 +30,10 @@ export function DpGenerator({
   const [program, setProgram] = React.useState<string>(blast.programs[0]?.abbr ?? "")
 
   const activeFrame = blast.frames.includes(selectedId) ? selectedId : blast.frames[0]
-  const activeProgram = blast.programs.some((p) => p.abbr === program)
+  const programsForYear = blast.programsByYear?.[year] ?? blast.programs
+  const activeProgram = programsForYear.some((p) => p.abbr === program)
     ? program
-    : blast.programs[0]?.abbr ?? ""
+    : programsForYear[0]?.abbr ?? ""
 
   const photo = usePhotoUpload()
   const transform = usePhotoTransform(PREVIEW_SIZE)
@@ -105,7 +106,7 @@ export function DpGenerator({
           />
           <CaptionForm
             palette={palette}
-            programs={blast.programs}
+            programs={programsForYear}
             name={name}
             year={year}
             program={activeProgram}

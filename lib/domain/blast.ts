@@ -30,6 +30,7 @@ export interface Blast {
   campus?: string
   event?: string
   programs: readonly Program[]
+  programsByYear?: Readonly<Partial<Record<Year, readonly Program[]>>>
   body: string
   hashtags: readonly string[]
   yearly?: Readonly<Partial<Record<Year, YearlyCaption>>>
