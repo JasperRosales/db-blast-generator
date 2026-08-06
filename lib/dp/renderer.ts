@@ -1,3 +1,4 @@
+import { PREVIEW_SIZE } from "@/lib/dp/config"
 import type {
   FrameDrawer,
   FrameId,
@@ -36,7 +37,10 @@ export function drawFrame(
   frameImage?: HTMLImageElement | null
 ) {
   ctx.clearRect(0, 0, size, size)
-  drawer.draw(ctx, size, image, palette, transform, frameImage)
+  const ratio = size / PREVIEW_SIZE
+  const scaledTransform: PhotoTransform =
+    ratio === 1 ? transform : { ...transform, x: transform.x * ratio, y: transform.y * ratio }
+  drawer.draw(ctx, size, image, palette, scaledTransform, frameImage)
 }
 
 export async function renderDp(

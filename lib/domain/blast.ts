@@ -13,6 +13,8 @@ export type YearlyCaption = {
   header: string
   body: string
   hashtags: string[]
+  campus?: string
+  event?: string
 }
 
 export interface Blast {
@@ -25,6 +27,8 @@ export interface Blast {
   glow: string
   frames: readonly FrameId[]
   department: string
+  campus?: string
+  event?: string
   programs: readonly Program[]
   body: string
   hashtags: readonly string[]

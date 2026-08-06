@@ -31,7 +31,11 @@ export function CaptionForm({
   onProgramChange: (value: string) => void
 }) {
   function handleCopy() {
-    navigator.clipboard.writeText(caption.text)
+    const item = new ClipboardItem({
+      "text/plain": new Blob([caption.text], { type: "text/plain" }),
+      "text/html": new Blob([caption.html], { type: "text/html" }),
+    })
+    navigator.clipboard.write([item])
   }
 
   return (
@@ -47,7 +51,7 @@ export function CaptionForm({
             value={name}
             onChange={(event) => onNameChange(event.target.value)}
             placeholder="Juan Dela Cruz"
-            className="mt-1.5 h-9 w-full rounded-xl border border-border/70 bg-background px-3 text-sm text-foreground outline-none [color-scheme:dark] placeholder:text-muted-foreground/60 focus:border-ring focus:ring-3 focus:ring-ring/30"
+            className="mt-1.5 h-9 w-full rounded-xl border border-border/70 bg-background px-3 text-sm text-foreground [color-scheme:dark] outline-none placeholder:text-muted-foreground/60 focus:border-ring focus:ring-3 focus:ring-ring/30"
           />
         </label>
 
@@ -77,7 +81,9 @@ export function CaptionForm({
                       : undefined
                   }
                 >
-                  <span className="block text-[13px] font-semibold">{item.abbr}</span>
+                  <span className="block text-[13px] font-semibold">
+                    {item.abbr}
+                  </span>
                   <span className="mt-0.5 block text-[11px] opacity-75">
                     {item.name}
                   </span>
@@ -123,14 +129,16 @@ export function CaptionForm({
         <div className="flex flex-col gap-3 rounded-2xl bg-background p-3.5 ring-1 ring-border/60">
           <div>
             <div className="flex items-start justify-between gap-3">
-              <p className="text-sm font-semibold text-foreground">{caption.header}</p>
+              <p className="text-sm font-semibold text-foreground">
+                {caption.header}
+              </p>
               <Button variant="outline" size="sm" onClick={handleCopy}>
                 <RiFileCopyLine data-icon="inline-start" />
                 Copy
               </Button>
             </div>
             <p className="mt-1 text-sm leading-snug text-muted-foreground">
-              {caption.body}
+              <span dangerouslySetInnerHTML={{ __html: caption.bodyHtml }} />
             </p>
             <p className="mt-1.5 text-xs text-primary/90">{caption.hashtags}</p>
           </div>
