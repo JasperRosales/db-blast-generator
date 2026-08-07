@@ -40,7 +40,7 @@ export const cetProgramsByYear: Readonly<Record<Year, readonly Program[]>> = {
     { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
     {
       name: "Bachelor of Instrumentation and Control Engineering Technology",
-      abbr: "BIECT",
+      abbr: "BICET",
     },
     { name: "Bachelor of Mechanical Engineering Technology", abbr: "BMET" },
     {
@@ -63,7 +63,7 @@ export const cetProgramsByYear: Readonly<Record<Year, readonly Program[]>> = {
     { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
     {
       name: "Bachelor of Instrumentation and Control Engineering Technology",
-      abbr: "BIECT",
+      abbr: "BICET",
     },
     { name: "Bachelor of Mechanical Engineering Technology", abbr: "BMET" },
     { name: "Bachelor of Drafting Engineering Technology", abbr: "BDET" },
@@ -75,7 +75,7 @@ export const cetProgramsByYear: Readonly<Record<Year, readonly Program[]>> = {
     { name: "Bachelor of Automotive Engineering Technology", abbr: "BAET" },
     {
       name: "Bachelor of Instrumentation and Control Engineering Technology",
-      abbr: "BIECT",
+      abbr: "BICET",
     },
     { name: "Bachelor of Computer Engineering Technology", abbr: "BCPET" },
     { name: "Bachelor of Electrical Engineering Technology", abbr: "BEET" },
@@ -189,7 +189,7 @@ export const blasts: Blast[] = [
       "oklch(0.48 0.24 290)",
     ],
     glow: "oklch(0.6 0.22 302 / 0.5)",
-    frames: ["hex", "seal"],
+    frames: ["cet"],
     department: "College of Engineering and Technology",
     programs: cetPrograms,
     programsByYear: cetProgramsByYear,
