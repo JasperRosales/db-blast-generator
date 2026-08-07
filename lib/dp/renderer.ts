@@ -8,6 +8,7 @@ import type {
 
 const loaders: Record<FrameId, () => Promise<FrameDrawer>> = {
   cics: () => import("@/lib/dp/frames/cics").then((mod) => mod.cics),
+  cet: () => import("@/lib/dp/frames/cet").then((mod) => mod.cet),
   neon: () => import("@/lib/dp/frames/neon").then((mod) => mod.neon),
   orbit: () => import("@/lib/dp/frames/orbit").then((mod) => mod.orbit),
   halo: () => import("@/lib/dp/frames/halo").then((mod) => mod.halo),
