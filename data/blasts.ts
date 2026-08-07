@@ -180,7 +180,7 @@ export const blasts: Blast[] = [
     id: "cet",
     label: "CET",
     name: "College of Engineering and Technology",
-    title: "Concrete plans, bold builds",
+    title: "⚙️ ELEVATION 3.0 ⚙️",
     description:
       "The College of Engineering and Technology is proud to welcome its new students — claim your spot with the CET display picture.",
     gradient: [
@@ -193,7 +193,7 @@ export const blasts: Blast[] = [
     department: "College of Engineering and Technology",
     programs: cetPrograms,
     programsByYear: cetProgramsByYear,
-    body: "Hello, I am {name}, a {year} {program} student at the {department}. Forged by late-night problem sets and fueled by ambition, I'm ready to build, design, and make this year count. Let's go!",
+    body: "Every new beginning is another chance to rise, innovate, and lead. With great pride, we usher in another academic year as members of the College of Engineering Technology of Batangas State University The National Engineering University, Balayan Campus, BatStateU, where dreams take shape and ideas lead to innovation. BatStateU's \"Leading Innovations, Transforming Lives, Building the Nation\" continues to inspire members of the university community to be at the vanguard of change and nation-building.\n\nI am {name}, a proud {year} student taking up {program}.\n\nTogether let us make this another year of overcoming challenges, celebrating victories, and soaring to new heights. This is more than a new chapter, this is our Elevation 3.0.\n\nRise with purpose. Engineer the future. Elevate beyond limits.💜🤍",
     hashtags: [
       "#CET",
       "#BSUBalayan",
