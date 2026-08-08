@@ -1,5 +1,6 @@
 export type FrameId =
   | "cics"
+  | "cics2"
   | "cet"
   | "neon"
   | "orbit"

@@ -115,7 +115,7 @@ export const blasts: Blast[] = [
       "oklch(0.62 0.22 285)",
     ],
     glow: "oklch(0.424 0.199 265.638 / 0.55)",
-    frames: ["cics"],
+    frames: ["cics", "cics2"],
     department: "College of Informatics and Computing Sciences",
     campus: "Batangas State University - TNEU Balayan Campus",
     event:
